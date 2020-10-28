@@ -35,6 +35,15 @@ function weeklyHigh () {
   document.getElementById('high').innerText = high
 }
 
+function calcGoal () {
+  const totalValue = entries.reduce(reducer).toFixed(1)
+  const percent    = totalValue / (goal / 100)
+  const progress   = document.getElementById('progressCircle')
+
+  if (percent > 100) percent === 100
+  progress.style.background = `conic-gradient(#70db70 ${percent}%, #2d3740 ${percent}% 100%)`
+}
+
 function handleSubmit (event) {
   event.preventDefault()
 
@@ -48,6 +57,7 @@ function handleSubmit (event) {
   calcTotal()
   calcAverage()
   weeklyHigh()
+  calcGoal()
 }
 
 const form = document.querySelector('[data-tracker-form]').addEventListener('submit', handleSubmit)
