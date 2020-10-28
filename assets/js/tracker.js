@@ -1,5 +1,8 @@
+const goal = 30
 let entries = []
 const entriesWrapper = document.querySelector('#entries')
+
+document.getElementById('target').innerText = goal
 
 function addNewEntry (newEntry) {
   const listItem  = document.createElement('li')
@@ -27,6 +30,11 @@ function calcAverage () {
   document.getElementById('average').innerText = average
 }
 
+function weeklyHigh () {
+  const high = Math.max(...entries)
+  document.getElementById('high').innerText = high
+}
+
 function handleSubmit (event) {
   event.preventDefault()
 
@@ -39,6 +47,7 @@ function handleSubmit (event) {
   addNewEntry(entry)
   calcTotal()
   calcAverage()
+  weeklyHigh()
 }
 
 const form = document.querySelector('[data-tracker-form]').addEventListener('submit', handleSubmit)
