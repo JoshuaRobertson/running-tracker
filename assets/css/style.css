@@ -119,7 +119,7 @@ li {
   width: 25rem;
   height: 25rem;
   border-radius: 50%;
-  background: conic-gradient(#70db70 50%, #2d3740 50%);
+  /* background: conic-gradient(#70db70 50%, #2d3740 50%); */
 }
 
 #progressCenter {
@@ -129,7 +129,7 @@ li {
   background-color: #1c262f;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 768px) {
   body {
     width: 60%;
     max-width: 800px;
